@@ -7,12 +7,6 @@ using KModkit;
 
 public class giantsDrinkScript : MonoBehaviour 
 {
-	[System.Serializable]
-	public class ArrayGameObject
-	{
-		public GameObject[] array;
-	}
-
 	public KMBombInfo bomb;
 	public KMAudio Audio;
 
@@ -23,9 +17,9 @@ public class giantsDrinkScript : MonoBehaviour
 	public Material[] liquids;
 	public Material[] gemMat;
 	public GameObject[] leftGoblets, rightGoblets;
-	public ArrayGameObject[] leftGobletsParts, rightGobletsParts;
 	public GameObject[] leftLiquids, rightLiquids;
 	public GameObject[] leftGems, rightGems;
+
 
 	int[] shape = new int[2];
 	int[] mat = new int[2];
@@ -134,14 +128,14 @@ public class giantsDrinkScript : MonoBehaviour
 		leftGoblets[shape[0]].SetActive(true);
 		rightGoblets[shape[1]].SetActive(true);
 
-		foreach(GameObject part in leftGobletsParts[shape[0]].array)
+		foreach(Renderer part in leftGoblets[shape[0]].GetComponentsInChildren<Renderer>())
 		{
-			part.GetComponentsInChildren<Renderer>()[0].material = materials[mat[0]];
+			part.material = materials[mat[0]];
 		}
 
-		foreach(GameObject part in rightGobletsParts[shape[1]].array)
+		foreach(Renderer part in rightGoblets[shape[1]].GetComponentsInChildren<Renderer>())
 		{
-			part.GetComponentsInChildren<Renderer>()[0].material = materials[mat[1]];
+			part.material = materials[mat[1]];
 		}
 
 		leftLiquids[shape[0]].GetComponentsInChildren<Renderer>()[0].material = liquids[liquid[0]];

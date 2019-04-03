@@ -13,7 +13,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: giantsDrink
   title: The Giant's Drink
-  description: 
+  description: "\"He never guessed right. Sometimes his head was dissolved. Sometimes
+    he caught on fire. Sometimes he fell in and drowned. Sometimes he fell out, turned
+    green, and rotted away. It was always ghastly, and the Giant always laughed.\"\n\r\nModule
+    by TheThirdMan\r\nmoduleID: giantsDrink\n\r\nGitHub Repository: https://github.com/luisdiogo98/ktane-giantsDrink\n\r\nAny
+    problems/suggestions, feel free to contact me on the KTaNE Discord @TheThirdMan.
+    Join the KTaNE Discord here: https://discord.gg/Fv7YEDj"
   version: 1.0
   outputFolder: build
-  previewImage: {fileID: 0}
+  previewImage: {fileID: 2800000, guid: cecf5d67521f41d4c8281ab0be5109d6, type: 3}
