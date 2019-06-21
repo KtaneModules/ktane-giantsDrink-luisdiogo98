@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using KModkit;
+using System.Text.RegularExpressions;
 
 public class giantsDrinkScript : MonoBehaviour 
 {
@@ -580,4 +581,25 @@ public class giantsDrinkScript : MonoBehaviour
 
 		return -1;
 	}
+
+    //twitch plays
+    #pragma warning disable 414
+    private readonly string TwitchHelpMessage = @"!{0} left [Drinks from the left goblet] | !{0} right [Drinks from the right goblet] | !{0} tilt u [General TP command, use to see contents of goblets]";
+    #pragma warning restore 414
+
+    IEnumerator ProcessTwitchCommand(string command)
+    {
+        if (Regex.IsMatch(command, @"^\s*left\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant))
+        {
+            yield return null;
+            yield return new[] { btnLeft };
+            yield break;
+        }
+        if (Regex.IsMatch(command, @"^\s*right\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant))
+        {
+            yield return null;
+            yield return new[] { btnRight };
+            yield break;
+        }
+    }
 }
