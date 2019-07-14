@@ -5,13 +5,12 @@ using System.Linq;
 using UnityEngine;
 using KModkit;
 using System.Text.RegularExpressions;
+using rnd = UnityEngine.Random;
 
 public class giantsDrinkScript : MonoBehaviour 
 {
 	public KMBombInfo bomb;
 	public KMAudio Audio;
-
-	static System.Random rnd = new System.Random();
 
 	public KMSelectable btnLeft, btnRight;
 	public Material[] materials;
@@ -107,17 +106,17 @@ public class giantsDrinkScript : MonoBehaviour
 
 	void CreateGoblets()
 	{
-		shape[0] = rnd.Next() % 8;
-		shape[1] = rnd.Next() % 8;
+		shape[0] = rnd.Range(0, 8);
+		shape[1] = rnd.Range(0, 8);
 
-		mat[0] = rnd.Next() % 4;
-		mat[1] = rnd.Next() % 4;
+		mat[0] = rnd.Range(0, 4);
+		mat[1] = rnd.Range(0, 4);
 
-		gems[0] = rnd.Next() % 8;
-		gems[1] = rnd.Next() % 8;
+		gems[0] = rnd.Range(0, 8);
+		gems[1] = rnd.Range(0, 8);
 
-		liquid[0] = rnd.Next() % 6;
-		liquid[1] = rnd.Next() % 6;
+		liquid[0] = rnd.Range(0, 6);
+		liquid[1] = rnd.Range(0, 6);
 
 		UnityEngine.Debug.LogFormat("[The Giant's Drink #{0}] The left goblet is made of {1}, its gems are {2} and its liquid is {3} (Size: {4}; Gem Placement: {5}, Gem Count: {6}).", moduleId, GetMaterial(mat[0]), GetGems(gems[0]), GetLiquid(liquid[0]), GetSize(shape[0]), GetGemPosition(shape[0]), GetGemCount(shape[0]));
 		UnityEngine.Debug.LogFormat("[The Giant's Drink #{0}] The right goblet is made of {1}, its gems are {2} and its liquid is {3} (Size: {4}; Gem Placement: {5}, Gem Count: {6}).", moduleId, GetMaterial(mat[1]), GetGems(gems[1]), GetLiquid(liquid[1]), GetSize(shape[1]), GetGemPosition(shape[1]), GetGemCount(shape[1]));
@@ -155,8 +154,8 @@ public class giantsDrinkScript : MonoBehaviour
 
 	void RefillGoblets()
 	{
-		liquid[0] = rnd.Next() % 6;
-		liquid[1] = rnd.Next() % 6;
+		liquid[0] = rnd.Range(0, 6);
+		liquid[1] = rnd.Range(0, 6);
 
 		leftLiquids[shape[0]].GetComponentInChildren<Renderer>().material = liquids[liquid[0]];
 		rightLiquids[shape[1]].GetComponentInChildren<Renderer>().material = liquids[liquid[1]];
