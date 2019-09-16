@@ -1,9 +1,7 @@
 fileFormatVersion: 2
 guid: a201381812b76bb4d8c232ed57b1bc0a
-timeCreated: 1554065966
-licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: default
     100002: default_MeshPart0
@@ -27,22 +25,32 @@ ModelImporter:
     2300006: default_MeshPart3
     2300008: default_MeshPart4
     2300010: default_MeshPart5
+    2300012: default
     3300000: default_MeshPart0
     3300002: default_MeshPart1
     3300004: default_MeshPart2
     3300006: default_MeshPart3
     3300008: default_MeshPart4
     3300010: default_MeshPart5
+    3300012: default
     4300000: default_MeshPart0
     4300002: default_MeshPart1
     4300004: default_MeshPart2
     4300006: default_MeshPart3
     4300008: default_MeshPart4
     4300010: default_MeshPart5
+    4300012: default
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: None
+    second: {fileID: 2100000, guid: 66deaebbcd8b5d54ba7de9dc3bfc4327, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -55,6 +63,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -79,6 +88,8 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
